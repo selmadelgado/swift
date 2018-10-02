@@ -1,0 +1,19 @@
+{
+  "name": "swift",
+  "version": "1.0.0",
+  "description": "Swift is an online, custom cruiser bike shop",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selmadelgado/swift.git"
+  },
+  "author": "Selma Delgado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/selmadelgado/swift/issues"
+  },
+  "homepage": "https://github.com/selmadelgado/swift#readme"
+}
