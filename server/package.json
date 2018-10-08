@@ -4,7 +4,7 @@
   "description": "Swift is an online, custom cruiser bike shop",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "seed": "NODE_ENV=db sequelize db:seed:undo:all"
   },
   "repository": {
     "type": "git",

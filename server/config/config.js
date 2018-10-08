@@ -1,14 +1,16 @@
+require('dotenv').config({ path: __dirname+'/../.env' })
+
 module.exports = {
-  'db': {
-    'username': process.env.DB_USER,
-    'password': process.env.DB_PASS,
-    'database': process.env.DB_NAME,
-    'host': process.env.DB_HOST,
-    'port': process.env.DB_PORT,
-    'dialect': 'mysql',
-    'logging': false
+  db: {
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: 'mysql',
+    logging: false
   },
-  'stripe': {
-    'secret': process.env.STRIPE_SECRET
+  stripe: {
+    secret: process.env.STRIPE_SECRET
   }
 }
