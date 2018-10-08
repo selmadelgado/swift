@@ -28,12 +28,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../public')))
 
+require("./routes/apiRoutes")(app)
 require("./routes/staticRoutes")(app)
-// require("./routes/apiRoutes")(app)
-
 
 app.use(function (err, req, res, next) {
   console.log('An error occured', err)
+  res.status(500).json({ error: 'critical error occured' })
 })
 
 module.exports = app
