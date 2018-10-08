@@ -1,0 +1,51 @@
+.black-layer {
+    background-color: rgba(56, 55, 48, 0.48);
+}
+.welcome {
+    margin-top: 20%;
+    letter-spacing: 39px;
+    font-size: 25px;
+}
+.page-footer {
+    padding-top: 0px;
+}
+.content-full-height {
+    min-height: 100vh;
+}
+.section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.step-1 {
+    padding: 50px 80px 0px 0px;
+}
+.step-2 {
+    padding: 20px;
+}
+.step-3 {
+    padding: 50px 0px 0px 80px;
+}
+
+@media only screen and (max-width: 768px){
+    .step-1 {
+        padding: 20px 30px 0px 0px;
+    }
+    .step-2 {
+        padding: 10px;
+    }
+    .step-3 {
+        padding: 20px 0px 0px 30px;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .step-1 {
+        padding: 5px 10px 0px 0px;
+    }
+    .step-2 {
+        padding: 0px;
+    }
+    .step-3 {
+        padding: 5px 0px 0px 10px;
+    }
+}

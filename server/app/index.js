@@ -3,16 +3,34 @@ const express = require('express')
 const router = express.Router()
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const exphbs = require("express-handlebars")
+const path = require('path')
 
 const env = process.env.NODE_ENV || "development"
 const _ = require('lodash')
 
 app = express()
 
-// to allow cross origin access
+// to allow cross origin access for api calls
 app.use(cors())
 
-app.use(bodyParser.urlencoded({ extended: true }))
+app.set('views', path.join(__dirname, 'views'));
+
+// Handlebars
+app.engine("handlebars", exphbs({
+    defaultLayout: "main",
+    layoutsDir:'server/app/views/layouts'
+  })
+)
+
+app.set("view engine", "handlebars")
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use(express.static(path.join(__dirname, '../public')))
+
+require("./routes/staticRoutes")(app)
+// require("./routes/apiRoutes")(app)
+
 
 app.use(function (err, req, res, next) {
   console.log('An error occured', err)
