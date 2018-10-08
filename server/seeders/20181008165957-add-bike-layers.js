@@ -28,17 +28,17 @@ module.exports = {
         part: 'wheel',
         additionalPrice: 10,
         imageSrc: '/bikes/Bike-Layers_0000s_0000_Wheels-Orange.png',
-        colorCode: '',
+        colorCode: '#D4833E',
       },{
         part: 'wheel',
         additionalPrice: 0,
         imageSrc: '/bikes/Bike-Layers_0000s_0001_Wheels-Blue.png',
-        colorCode: '',
+        colorCode: '#4664BD',
       },{
         part: 'wheel',
         additionalPrice: 5,
         imageSrc: '/bikes/Bike-Layers_0000s_0002_Wheels-Purple.png',
-        colorCode: '',
+        colorCode: '#B362B1',
       }
     ]
 
@@ -47,27 +47,27 @@ module.exports = {
         part: 'handlebar',
         additionalPrice: 0,
         imageSrc: '/bikes/Bike-Layers_0000s_0003_Bars-Pink.png',
-        colorCode: '',
+        colorCode: '#E0A6C2',
       },{
         part: 'handlebar',
         additionalPrice: 15,
         imageSrc: '/bikes/Bike-Layers_0000s_0004_Bars-Blue.png',
-        colorCode: '',
+        colorCode: '#6C98C8',
       },{
         part: 'handlebar',
         additionalPrice: 20,
         imageSrc: '/bikes/Bike-Layers_0000s_0005_Bars-Green.png',
-        colorCode: '',
+        colorCode: '#758F3A',
       },{
         part: 'handlebar',
         additionalPrice: 24,
         imageSrc: '/bikes/Bike-Layers_0000s_0006_Bars-Yellow.png',
-        colorCode: '',
+        colorCode: '#EAD34D',
       },{
         part: 'handlebar',
         additionalPrice: 12,
         imageSrc: '/bikes/Bike-Layers_0000s_0007_Bars-Lime.png',
-        colorCode: '',
+        colorCode: '#CBDABC',
       }
     ]
 
@@ -76,22 +76,22 @@ module.exports = {
         part: 'body',
         additionalPrice: 0,
         imageSrc: '/bikes/Bike-Layers_0000s_0008_Body-Pink.png',
-        colorCode: '',
+        colorCode: '#D169BA',
       },{
         part: 'body',
         additionalPrice: 15,
         imageSrc: '/bikes/Bike-Layers_0000s_0009_Body-Teal.png',
-        colorCode: '',
+        colorCode: '#AFF6F3',
       },{
         part: 'body',
         additionalPrice: 20,
         imageSrc: '/bikes/Bike-Layers_0000s_0010_Body-Blue.png',
-        colorCode: '',
+        colorCode: '#CCEBF4',
       },{
         part: 'body',
         additionalPrice: 10,
         imageSrc: '/bikes/Bike-Layers_0000s_0011_Body-Purple.png',
-        colorCode: '',
+        colorCode: '#B3ACE7',
       }
     ]
 
@@ -104,7 +104,7 @@ module.exports = {
     })
 
     return queryInterface.bulkInsert('Layers', layers, {})
-    
+
   },
 
   down: (queryInterface, Sequelize) => {
