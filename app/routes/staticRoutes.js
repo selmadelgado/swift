@@ -5,6 +5,11 @@ module.exports = function(app) {
     res.render("index")
   })
 
+  // Load cart page
+  app.get("/cart", function(req, res) {
+    res.render("cart")
+  })
+
   // Load success page after payment
   app.get("/paysuccess", function(req, res) {
     res.render("paysuccess");

@@ -116,7 +116,6 @@ class App extends Component {
 
     this.mergeLayers(layers)
     .then((imgBase64Src) => {
-      console.log(imgBase64Src, 'imgBase64Src')
 
       const cart = {
         productImage: imgBase64Src,
@@ -126,6 +125,9 @@ class App extends Component {
       }
 
       localStorage.setItem('cart', JSON.stringify(Object.assign({}, cart)))
+
+      // redirect to cart page
+      window.location.replace('/cart')
     })
   }
 
