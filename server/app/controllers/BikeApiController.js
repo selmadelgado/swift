@@ -17,7 +17,7 @@ class BikeApiController {
         where: {
           bikeId: bike.id
         },
-        attributes: ['part', 'imageSrc', 'colorCode', 'additionalPrice']
+        attributes: ['id', 'part', 'imageSrc', 'colorCode', 'additionalPrice']
       })
     })
     .then((layers) => {
