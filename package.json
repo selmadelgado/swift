@@ -4,7 +4,8 @@
   "description": "Swift is an online, custom cruiser bike shop",
   "main": "index.js",
   "scripts": {
-    "seed": "NODE_ENV=db sequelize db:seed:undo:all",
+    "seed": "NODE_ENV=db sequelize db:seed:all",
+    "undoSeed": "NODE_ENV=db sequelize db:seed:undo:all",
     "client": "cd client && npm install --only=dev && npm run prodBuild && cd ../",
     "postinstall": "npm install -g sequelize-cli && npm run client",
     "start": "node index"
