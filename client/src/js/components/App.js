@@ -5,7 +5,6 @@ import Parts from "./Parts";
 import Colors from "./Colors";
 import BuyButton from "./BuyButton";
 
-const API = 'http://swift.test'
 const fetchQuery = `/fetchLayers`
 
 class App extends Component {
@@ -25,7 +24,7 @@ class App extends Component {
 
   fetchData() {
     let state = {}
-    fetch(API + fetchQuery)
+    fetch(fetchQuery)
     .then(response => response.json())
     .then(data => {
       const { basePrice, layers: allLayers } = data
