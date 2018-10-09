@@ -1,3 +1,7 @@
+const { login, authenticateLogin, authenticationFailed } = require('../controllers/LoginController')
+const registered = require('connect-ensure-login').ensureLoggedIn()
+const guest = require('connect-ensure-login').ensureLoggedOut()
+
 module.exports = function(app) {
 
   // Load index page
@@ -9,6 +13,14 @@ module.exports = function(app) {
   app.get("/cart", function(req, res) {
     res.render("cart")
   })
+
+  app.get("/authentication-failed", guest, authenticationFailed)
+
+  // Login to the page
+  app.get("/login-signup", login)
+
+  // Login to the page
+  app.get("/auth/google/callback", authenticateLogin)
 
   // Load success page after payment
   app.get("/paysuccess", function(req, res) {

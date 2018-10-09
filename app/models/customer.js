@@ -6,8 +6,12 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    googleId: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     email: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         isEmail: true
@@ -15,18 +19,11 @@ module.exports = function (sequelize, DataTypes) {
     },
     phone: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     address: {
       type: DataTypes.TEXT,
       allowNull: true,
-    },
-    password: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      validate: {
-        len: [2, 10]
-      }
     }
   });
 

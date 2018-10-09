@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const exphbs = require("express-handlebars")
 const path = require('path')
+const passport = require('passport')
 
 const env = process.env.NODE_ENV || "development"
 const _ = require('lodash')
@@ -27,6 +28,10 @@ app.set("view engine", "handlebars")
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../public')))
+app.use(require('express-session')({ secret: process.env.SECRET, resave: true, saveUninitialized: true }));
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 require("./routes/apiRoutes")(app)
 require("./routes/staticRoutes")(app)

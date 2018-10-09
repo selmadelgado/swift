@@ -8,30 +8,32 @@
         <div class="progress" id="progress">
             <div class="indeterminate"></div>
         </div>
-        <table id="cart-table" class="striped responsive-table hide">
-            <thead>
-            <tr>
-                <th>Final Look</th>
-                <th>Base Price</th>
-                <th>Additional</th>
-                <th>Total</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td id="final-look"><img style="width: 200px" class="responsive-img" src=""></td>
-                <td id="base-price"></td>
-                <td id="additional-price"></td>
-                <td id="total"></td>
-            </tr>
-            </tbody>
-        </table>
-        <div id="no-item-found" class="hide">
-            <h2 class="text-center hide">There is no item in your cart</h2>
+        <div id="cart-table" class="hide">
+            <table class="striped responsive-table">
+                <thead>
+                <tr>
+                    <th>Final Look</th>
+                    <th>Base Price</th>
+                    <th>Additional</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td id="final-look"><img style="width: 200px" class="responsive-img" src=""></td>
+                    <td id="base-price"></td>
+                    <td id="additional-price"></td>
+                    <td id="total"></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="right-align">
+                <a class="waves-effect waves-light btn-large red lighten-2" href="#">Buy Now</a>
+            </div>
         </div>
-    </div>
-    <div class="row container right-align">
-        <a class="waves-effect waves-light btn-large red lighten-2" href="#">Buy Now</a>
+        <div id="no-item-found" class="hide center">
+            <h2>There is no item in your cart!</h2>
+        </div>
     </div>
 </section>
 
