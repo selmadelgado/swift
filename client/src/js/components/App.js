@@ -121,6 +121,7 @@ class App extends Component {
       const cart = {
         productImage: imgBase64Src,
         price: this.getPrice(),
+        basePrice: this.state.basePrice,
         name: 'Customised Bike'
       }
 
