@@ -19,7 +19,7 @@ app.set('views', path.join(__dirname, 'views'));
 // Handlebars
 app.engine("handlebars", exphbs({
     defaultLayout: "main",
-    layoutsDir:'server/app/views/layouts'
+    layoutsDir:'app/views/layouts'
   })
 )
 

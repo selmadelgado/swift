@@ -21,6 +21,6 @@ module.exports = {
   },
   output: {
     filename: 'customiser.js',
-    path: path.resolve(__dirname, '../server/public/js'),
+    path: path.resolve(__dirname, '../public/js'),
   }
 }
