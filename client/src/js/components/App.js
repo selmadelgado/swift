@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import mergeImages from 'merge-images';
 import Layers from "./Layers";
 import Parts from "./Parts";
 import Colors from "./Colors";
@@ -16,6 +17,7 @@ class App extends Component {
     this.changeColor = this.changeColor.bind(this)
     this.changeLayer = this.changeLayer.bind(this)
     this.storeOrder = this.storeOrder.bind(this)
+    this.getPrice = this.getPrice.bind(this)
   }
 
   componentWillMount() {
@@ -31,7 +33,8 @@ class App extends Component {
 
       const defaultLayer = {
         imageSrc: '/bikes/Bike-Layers_0000s_0013_Original-Black-White.png',
-        part: 'whole'
+        part: 'whole',
+        additionalPrice: 0
       }
 
       const selectedPart = 'body'
@@ -96,14 +99,50 @@ class App extends Component {
     })
 
     // add selected layer to activeLayer
-    const activeLayer = { imageSrc: colorLayer.imageSrc, part: colorLayer.part }
+    const activeLayer = {
+      imageSrc: colorLayer.imageSrc,
+      part: colorLayer.part ,
+      additionalPrice: colorLayer.additionalPrice ,
+    }
     state.activeLayers.push(activeLayer)
 
     this.setState(state)
   }
 
   storeOrder() {
-    localStorage.setItem('customisedBike', JSON.stringify(Object.assign({}, this.state)));
+    const layers = this.state.activeLayers.map((layer) => {
+      return layer.imageSrc
+    })
+
+    this.mergeLayers(layers)
+    .then((imgBase64Src) => {
+      console.log(imgBase64Src, 'imgBase64Src')
+
+      const cart = {
+        productImage: imgBase64Src,
+        price: this.getPrice(),
+        name: 'Customised Bike'
+      }
+
+      localStorage.setItem('cart', JSON.stringify(Object.assign({}, cart)))
+    })
+  }
+
+  mergeLayers(layers) {
+    return new Promise(function(fulfill, reject){
+      mergeImages(layers)
+      .then(b64 => fulfill(b64))
+      .catch(console.log)
+    })
+  }
+
+  getPrice() {
+    let price = this.state.basePrice
+    this.state.activeLayers.forEach((layer) => {
+      price = price + layer.additionalPrice
+    })
+
+    return price
   }
 
   render() {
@@ -117,7 +156,7 @@ class App extends Component {
         <Layers layers={this.state.activeLayers} />
         <Parts changeSelectedPart={this.changeSelectedPart} selectedPart={this.state.selectedPart} />
         <Colors changeColor={this.changeColor} colors={this.state.colors} />
-        <BuyButton buyNow={ this.storeOrder } basePrice={ this.state.basePrice } additionalPrice={ this.state.additionalPrice } />
+        <BuyButton buyNow={ this.storeOrder } price={this.getPrice()} />
       </div>
     );
   }

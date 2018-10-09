@@ -7,13 +7,10 @@ class Layer extends Component {
   }
 
   render() {
-
-    const price = this.props.basePrice + this.props.additionalPrice
-
     return (
       <div className="row">
         <div className="custom-price">
-          <h5 className="red-text">${price}</h5>
+          <h5 className="red-text">${this.props.price}</h5>
           <span onClick={this.props.buyNow} className="waves-effect waves-light teal lighten-2 btn">BUY NOW</span>
         </div>
       </div>
