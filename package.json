@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "seed": "NODE_ENV=db sequelize db:seed:undo:all",
-    "client": "cd client && npm install && npm run prodBuild && cd ../",
+    "client": "cd client && npm install --only=dev && npm run prodBuild && cd ../",
     "postinstall": "npm install -g sequelize-cli && npm run client",
     "start": "node index"
   },
