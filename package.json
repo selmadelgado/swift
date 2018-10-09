@@ -6,7 +6,7 @@
   "scripts": {
     "seed": "NODE_ENV=db sequelize db:seed:undo:all",
     "postinstall": "npm install -g sequelize-cli",
-    "start": "node server"
+    "start": "node index"
   },
   "repository": {
     "type": "git",
